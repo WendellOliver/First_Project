@@ -17,7 +17,7 @@ body {
     background-size: 100%;
     font-size: 100%;
     font-family: sans-serif;
-    margin: 8%;
+    margin: 2%;
     height: 100%;    
 }
 
@@ -46,6 +46,29 @@ body {
     text-align: center;
 }
 
+.botao{
+    width: 40%;
+    height: 60px;
+    background-color: #2093e0;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 16px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    transition: filter 0.2s;
+    cursor: pointer;
+    margin-left: 150px;
+}
+
+.botao:hover {
+    filter: brightness(70%);
+  }
+
 .cadastro label {
     display: block;
     font-size: 14px;
@@ -63,14 +86,16 @@ body {
 }
 
 .cadastro 
-input:not([type="checkbox"]) {
+input:not([type="radio"]) {
     background: #c5c4c4;
     border: 1px solid #979696;
     border-radius: 2px;
     padding: 8px 8px;
     display: block;
     width: 100%;
+    margin-bottom: 15px;
 }
+
 
 input{
     box-sizing: border-box;
