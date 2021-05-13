@@ -3,11 +3,77 @@ html
     height:100%;
 }
 
-body {
-    background: linear-gradient(180deg,rgb(36, 41, 36) 0%,#ff0000 100%);
-    height:100%;
-    margin:0;
-    background-size: 100% ;
-    font-size: 100%;
-    font: 'Tangerine';
+#titulo{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(202, 84, 5);
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+    font-size: 25px;
 }
+
+body {
+    background: linear-gradient(180deg ,rgb(191, 194, 55) 0%,#ff0000 100%);
+    background-size: 100%;
+    font-size: 100%;
+    font-family: sans-serif;
+    margin: 8%;
+    height: 100%;    
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.coluna1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coluna2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botao{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cadastro label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #292929;
+    cursor: pointer;
+}
+
+#form{
+    width: 500px;
+    min-height: 400px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 30px;
+}
+
+.cadastro 
+input:not([type="checkbox"]) {
+    background: #c5c4c4;
+    border: 1px solid #979696;
+    border-radius: 2px;
+    padding: 8px 8px;
+    display: block;
+    width: 100%;
+}
+
+input{
+    box-sizing: border-box;
+    outline:none;
+}
+
