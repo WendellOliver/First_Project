@@ -4,7 +4,7 @@ html
 }
 
 #titulo{
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(202, 84, 5);
     font-weight: bold;
     text-align: center;
@@ -21,6 +21,11 @@ body {
     height: 100%;    
 }
 
+.cadastro
+input:focus {
+    background-color: rgb(226, 46, 46);
+  }
+  
 .wrapper {
     display: flex;
     align-items: center;
@@ -97,8 +102,9 @@ input:not([type="radio"]) {
 }
 
 
-input{
+/* input{
     box-sizing: border-box;
     outline:none;
-}
+} */
+
 
