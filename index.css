@@ -13,7 +13,7 @@ html
 }
 
 body {
-    background: linear-gradient(180deg ,rgb(191, 194, 55) 0%,#ff0000 100%);
+    background: #FFFFFF url("https://exame.com/wp-content/uploads/2019/08/gettyimages-1061868580.jpg") no-repeat right top fixed;
     background-size: 100%;
     font-size: 100%;
     font-family: sans-serif;
