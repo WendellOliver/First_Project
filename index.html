@@ -36,7 +36,7 @@
 
                 <div class="cadastro">
                     <label for="telefone">Telefone:</label>
-                    <input type="tel" placeholder="Digite seu Telefone" id="telefone" onkeypress="mask(this, mtelefone)"
+                    <input type="text" placeholder="Digite seu Telefone" id="telefone" onkeypress="mask(this, mtelefone)"
                      onblur="mask(this, mtelefone)" />
                 </div>
 
@@ -49,22 +49,22 @@
 
             <div class="cadastro">
                 <label for="rua">Rua:</label>
-                <input disabled id="rua" />
+                <input type="text" class="endereco" onfocus="this.value=''" id="rua" disabled/>
             </div>
 
             <div class="cadastro">
                 <label for="bairro">Bairro:</label>
-                <input disabled id="bairro" />
+                <input type="text" class="endereco" onfocus="this.value=''" id="bairro" disabled/>
             </div>
 
             <div class="cadastro">
                 <label for="cidade">Cidade:</label>
-                <input disabled id="cidade" />
+                <input type="text" class="endereco" id="cidade" onfocus="this.value=''" disabled/>
             </div>
 
             <div class="cadastro">
                 <label for="estado">Estado:</label>
-                <input disabled id="uf" />
+                <input type="text" class="endereco" id="uf" onfocus="this.value=''" disabled/>
             </div>
 
             <div class="coluna2">
@@ -96,7 +96,7 @@
 
             </div>
 
-            <button class="botao" type="button" onclick="validar()">Concluído</button>
+            <button class="botao" type="button" onclick=validar()>Concluído</button>
     </div>
 
     </div>

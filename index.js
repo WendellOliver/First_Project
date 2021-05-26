@@ -5,6 +5,10 @@
         var email=document.getElementById("email");
         var telefone=document.getElementById("telefone");
         var cep=document.getElementById("cep");
+        var rua=document.getElementById("rua");
+        var bairro=document.getElementById("bairro");
+        var cidade=document.getElementById("cidade");
+        var estado=document.getElementById("uf");
         var sexom=document.getElementById("sexom").checked;
         var sexof=document.getElementById("sexof").checked;
         var sexoo=document.getElementById("sexoo").checked;
@@ -53,12 +57,37 @@
             return;
         }
 
+        if (rua.value ==''){
+            alert ("Favor digite sua Rua!");
+            document.getElementById('rua').focus();
+            return;
+        }
+
+        if (bairro.value == '' || bairro.value == "..."){
+            alert ("Favor digite seu Bairro!");
+            document.getElementById('bairro').focus();
+            return;
+        }
+
+        if (cidade.value == '' || cidade.value == "..."){
+            alert ("Favor digite sua Cidade!");
+            document.getElementById('cidade').focus();
+            return;
+        }
+
+        if (estado.value == '' || estado.value == "..."){
+            alert ("Favor digite seu Estado!");
+            document.getElementById('uf').focus();
+            return;
+        }
+
         //Verifica se uma das checkboxes foram marcadas, caso contrario alerta o usuario para selecionar seu sexo correspondente. 
         if (sexom == false && sexof == false && sexoo == false) {
             alert ("Favor escolha seu sexo!");
             document.getElementsByName('sexo').focus();
             return;
         }
+
 
     }
 
@@ -67,6 +96,11 @@
         var emailregex=/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
         return emailregex.test(mail);
 
+    }
+
+    if (telefone.value=""){ //Função que valida se o telefone foi digitado ou não.
+        alert("Favor Digitar seu numero de telefone!");
+        document.getElementById('telefone').focus();
     }
 
     function mask(v1, v2){ //Função da mask do telefone
@@ -97,18 +131,7 @@
     }
     return r;
     }
-
-    function meu_callback(conteudo) { //Função que realiza o callback do CEP
-        if (!("erro" in conteudo)) {
-            document.getElementById('rua').value = (conteudo.logradouro);
-            document.getElementById('bairro').value = (conteudo.bairro);
-            document.getElementById('cidade').value = (conteudo.localidade);
-            document.getElementById('uf').value = (conteudo.uf);
-
-        } else {
-            alert("CEP não encontrado.");
-        }
-    }
+    
     function buscacep(ncep) { //Função que realiza a validação do CEP e aplica a mask 
         var cep = ncep.replace(/\D/g, '');
         if (cep != "") {
@@ -132,5 +155,28 @@
             else {             
                 alert("CEP invalido.");
                 }
+            }
+        }
+
+        function meu_callback(conteudo) { //Função que realiza o callback do CEP
+            if (!("erro" in conteudo)) {
+                document.getElementById('rua').value = (conteudo.logradouro);
+                document.getElementById('bairro').value = (conteudo.bairro);
+                document.getElementById('cidade').value = (conteudo.localidade);
+                document.getElementById('uf').value = (conteudo.uf);
+    
+            } else {
+                alert("CEP não encontrado, favor digitar seu endereço completo");
+                document.getElementById('rua').disabled = false;
+                document.getElementById('bairro').disabled = false;
+                document.getElementById('cidade').disabled = false;
+                document.getElementById('uf').disabled = false;
+
+                document.getElementById('rua').focus();
+
+                
+                
+                
+
             }
         }
