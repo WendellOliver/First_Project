@@ -50,32 +50,32 @@
             telefone.focus();
             return;
         }
-        //Se nada for digitado na box do CEP, o site ira alertar o usuario e foca na box correspondente.
+        //Se nada for digitado na box do CEP, o site ira alertar o usuario e focar na box correspondente.
         if (cep.value == ""){
             alert("Favor digitar o CEP!");
             cep.focus();
             return;
         }
 
-        if (rua.value ==''){
+        if (rua.value ==''){ //Se nada for digitado na box da Rua, o site ira alertar o usuario e focar na box correspondente.
             alert ("Favor digite sua Rua!");
             document.getElementById('rua').focus();
             return;
         }
 
-        if (bairro.value == '' || bairro.value == "..."){
+        if (bairro.value == '' || bairro.value == "..."){ //Se nada ou ... for digitado na box do Bairro, o site ira alertar o usuario e focar na box correspondente.
             alert ("Favor digite seu Bairro!");
             document.getElementById('bairro').focus();
             return;
         }
 
-        if (cidade.value == '' || cidade.value == "..."){
+        if (cidade.value == '' || cidade.value == "..."){ //Se nada ou ... for digitado na box da Cidade, o site ira alertar o usuario e focar na box correspondente.
             alert ("Favor digite sua Cidade!");
             document.getElementById('cidade').focus();
             return;
         }
 
-        if (estado.value == '' || estado.value == "..."){
+        if (estado.value == '' || estado.value == "..."){ //Se nada ou ... for digitado na box do Estado, o site ira alertar o usuario e focar na box correspondente.
             alert ("Favor digite seu Estado!");
             document.getElementById('uf').focus();
             return;
@@ -84,11 +84,8 @@
         //Verifica se uma das checkboxes foram marcadas, caso contrario alerta o usuario para selecionar seu sexo correspondente. 
         if (sexom == false && sexof == false && sexoo == false) {
             alert ("Favor escolha seu sexo!");
-            document.getElementsByName('sexo').focus();
             return;
         }
-
-
     }
 
     //Função que verifica se o e-mail foi digitado de forma correta.
@@ -110,8 +107,6 @@
             if (g != v1.value){ //Verifica se a mascara(mask) inserida se esta diferente do que o usuario digitou na tela 
                 v1.value=g //Se sim , o valor do input recebe o valor que foi includo com a mascara
             }
-
-
         }
 
         )
@@ -152,7 +147,7 @@
                 script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
                 document.body.appendChild(script);
             } 
-            else {             
+            else { //Caso o CEP seja digitado incorretamente, ele alertara o usuario.             
                 alert("CEP invalido.");
                 }
             }
@@ -165,18 +160,12 @@
                 document.getElementById('cidade').value = (conteudo.localidade);
                 document.getElementById('uf').value = (conteudo.uf);
     
-            } else {
+            } else { //Se o CEP for digitado corretamente mas a API não retornar com um resultado, o site pedira ao usuario digitar o resto das informações.
                 alert("CEP não encontrado, favor digitar seu endereço completo");
                 document.getElementById('rua').disabled = false;
                 document.getElementById('bairro').disabled = false;
                 document.getElementById('cidade').disabled = false;
                 document.getElementById('uf').disabled = false;
-
-                document.getElementById('rua').focus();
-
-                
-                
-                
-
+                document.getElementById('rua').focus();                                               
             }
         }
